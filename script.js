@@ -48,7 +48,7 @@
   /* ---------- Opening: ribbon video plays, then the cover opens to reveal the page ---------- */
   var video = document.getElementById('coverVideo');
   var hint = document.getElementById('coverHint');
-  var VW = 672, VH = 1196;                          // video size
+  var VW = 720, VH = 1280;                          // video size
 
   function layout() {
     var vw = window.innerWidth, vh = window.innerHeight;
@@ -56,6 +56,8 @@
     var s = narrow ? Math.max(vw / VW, vh / VH) : vh / VH;
     video.style.width = VW * s + 'px'; video.style.height = VH * s + 'px';
     video.style.left = (vw - VW * s) / 2 + 'px'; video.style.top = (vh - VH * s) / 2 + 'px';
+    // keep the hint on the blank part of the card, just below the bow, at any screen shape
+    hint.style.top = ((vh - VH * s) / 2 + VH * s * 0.765) + 'px';
   }
   layout();
   window.addEventListener('resize', layout);
@@ -74,7 +76,7 @@
   function openInvite() {
     if (opened) return;
     opened = true;
-    video.muted = true;                       // the ribbon clip has its own sound track; the song plays instead
+    video.muted = true;                       // the song plays instead of any clip audio
     try { audio.currentTime = 0; } catch (e) {}   // song begins exactly with the video, even if autoplay had started it early
     play();                                   // the tap is a user gesture: music starts with the ribbon
     hint.classList.add('hide');
@@ -82,15 +84,13 @@
     video.addEventListener('playing', function () { video.removeAttribute('poster'); }, { once: true });
     var p = video.play();
     if (p && p.catch) p.catch(finish);
-    // speed up the last part (flap opening / card reveal)
-    var fast = false;
+    // the clip ends on the hands photo (same as the hero): fade out once the card has fully opened
     var watch = setInterval(function () {
-      if (!fast && video.currentTime >= 1.8) { fast = true; video.playbackRate = 2; }
-      if (video.currentTime >= 4.3 || finished) { clearInterval(watch); finish(); }
+      if (video.currentTime >= 6.2 || finished) { clearInterval(watch); finish(); }
     }, 40);
     video.addEventListener('ended', finish, { once: true });
     video.addEventListener('error', finish, { once: true });
-    setTimeout(finish, 7000);                 // safety net
+    setTimeout(finish, 10000);                 // safety net
   }
   cover.addEventListener('pointerup', openInvite);   // fires as soon as the finger lifts, so the song starts with no extra delay
   cover.addEventListener('click', openInvite);
