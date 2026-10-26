@@ -29,13 +29,9 @@
 
   /* ---------- Music: one audio element, started by the Open tap, never restarted ---------- */
   var ctl = document.getElementById('musicCtl');
-  var muteBtn = document.getElementById('muteBtn');
   var playBtn = document.getElementById('playBtn');
   audio.volume = 0.4;
   function sync() {
-    muteBtn.classList.toggle('off', audio.muted);
-    muteBtn.setAttribute('aria-pressed', audio.muted ? 'true' : 'false');
-    muteBtn.setAttribute('aria-label', audio.muted ? 'Unmute music' : 'Mute music');
     playBtn.classList.toggle('off', audio.paused);
     playBtn.setAttribute('aria-label', audio.paused ? 'Play music' : 'Pause music');
   }
@@ -44,9 +40,8 @@
     var p = audio.play();
     if (p && p.catch) p.catch(function () { sync(); });
   }
-  muteBtn.addEventListener('click', function () { audio.muted = !audio.muted; sync(); });
   playBtn.addEventListener('click', function () { if (audio.paused) play(); else audio.pause(); sync(); });
-  ['play', 'pause', 'volumechange'].forEach(function (ev) { audio.addEventListener(ev, sync); });
+  ['play', 'pause'].forEach(function (ev) { audio.addEventListener(ev, sync); });
   sync();
   play();                                    // attempt autoplay; silently ignored if the browser blocks it
 

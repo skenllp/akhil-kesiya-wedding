@@ -137,7 +137,7 @@ section{padding:56px 24px;text-align:center}
 .frame::after{inset:19px;border-radius:12px;opacity:.55}
 
 /* ---------- Music controls ---------- */
-.music-ctl{position:fixed;z-index:90;right:max(14px,env(safe-area-inset-right,0px));top:calc(env(safe-area-inset-top,0px) + 14px);display:flex;flex-direction:column;gap:10px}
+.music-ctl{position:fixed;z-index:90;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 16px);display:flex}
 .music-ctl[hidden]{display:none}
 .music-ctl button{width:52px;height:52px;border-radius:50%;background:var(--plum);color:var(--ivory);border:1.5px solid var(--gold);display:grid;place-items:center;box-shadow:0 3px 10px rgba(52,43,50,.28)}
 .music-ctl svg{width:24px;height:24px}
