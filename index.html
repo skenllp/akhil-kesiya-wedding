@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kesiah &amp; Akhil | 11th January 2027</title>
+  <meta name="description" content="Together with our families, we joyfully solicit your presence and blessings at the wedding of Dr. Kesiah Lee Abey &amp; Dr. Akhil George Varghese on 11th January 2027, 10:30 AM at St. Thomas Orthodox Cathedral, Kannamkode, Adoor.">
+  <meta name="theme-color" content="#F8F2EB">
+
+  <!-- Open Graph / sharing preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kesiah &amp; Akhil — Wedding Invitation">
+  <meta property="og:description" content="11th January 2027 · Wedding at St. Thomas Orthodox Cathedral, Kannamkode, Adoor, followed by the reception at St. Thomas Parish Hall, Adoor.">
+  <meta property="og:url" content="https://akhil-kesiya-wedding.vercel.app/">
+  <meta property="og:image" content="https://akhil-kesiya-wedding.vercel.app/og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://akhil-kesiya-wedding.vercel.app/og.jpg">
+
+  <link rel="preload" href="fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="img/hero-hands.jpg" as="image">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <audio id="bg-music" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <symbol id="pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7z" fill="currentColor"/><circle cx="12" cy="9" r="2.6" fill="#F8F2EB"/></symbol>
+  </defs></svg>
+
+  <!-- RIBBON VIDEO COVER -->
+  <div id="cover" role="button" tabindex="0" aria-label="Open invitation">
+    <video id="coverVideo" src="ribbon.mp4" poster="poster.jpg" playsinline webkit-playsinline preload="auto"></video>
+    <div class="cover-hint" id="coverHint"><small>TAP TO OPEN</small>OPEN INVITATION</div>
+  </div>
+
+  <!-- floating music controls -->
+  <div class="music-ctl" id="musicCtl" hidden>
+    <button type="button" id="muteBtn" aria-label="Mute music" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="i-on"><path d="M4 9v6h4l5 4V5L8 9z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <svg viewBox="0 0 24 24" class="i-off"><path d="M4 9v6h4l5 4V5L8 9z" fill="currentColor"/><path d="M16 9l5 6M21 9l-5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <button type="button" id="playBtn" aria-label="Pause music">
+      <svg viewBox="0 0 24 24" class="i-on"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>
+      <svg viewBox="0 0 24 24" class="i-off"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>
+    </button>
+  </div>
+
+  <main id="page" class="page">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <img class="hero-img" src="img/hero-hands.jpg" alt="Clasped hands of Akhil and Kesiah" width="941" height="1672" fetchpriority="high">
+      <div class="hero-shade"></div>
+      <div class="hero-inner">
+        <img class="hero-dove" src="dove.png" alt="Two doves emblem" width="64" height="64">
+        <p class="hero-verse">&ldquo;So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate.&rdquo;<span class="hero-verse-ref">&mdash; Matthew 19:6</span></p>
+        <h1 class="hero-names"><span>Akhil</span><span class="amp">&amp;</span><span>Kesiah</span></h1>
+        <div class="hero-date">11 January 2027 &middot; Monday</div>
+        <p class="hero-tag">are uniting in Holy Matrimony, and we request your presence &amp; blessings.</p>
+        <a class="scroll-btn" href="#joyful" aria-label="Scroll down"><span>SCROLL</span><i></i></a>
+      </div>
+    </section>
+<!-- COUPLE (colour) -->
+    <section class="couple couple-colour reveal">
+      <figure class="portrait"><img src="img/hero-colour.jpg" alt="Akhil and Kesiah" width="810" height="1086" loading="lazy"></figure>
+    </section>
+
+    <!-- 5. WITH JOYFUL HEARTS + FAMILY -->
+    <div class="bgs bg-floral">
+    <section class="dear reveal" id="joyful">
+      <div class="dear-card">
+        <h2>WITH JOYFUL<br>HEARTS</h2>
+        <span class="rule" aria-hidden="true"></span>
+        <p>Together with our beloved parents and families, we joyfully solicit your esteemed presence and blessings on the auspicious occasion of our wedding.</p>
+      </div>
+    </section>
+
+    <section class="invite family reveal">
+      <div class="person">
+        <div class="role-s">The Groom</div>
+        <div class="pname">Dr. Akhil George Varghese</div>
+        <p class="pline">Son of<br><strong>Mrs. Elcey Varghese &amp; Mr. George Varghese</strong><br>(Grand S/o Late P.K. George &amp; Late Ponnamma George and Late Sanjivi Thomas &amp; Late Sosamma Thomas)<br>Pulari, Peringanadu P.O, Adoor,<br>Pathanamthitta - 691551<br>Mob: 9496523000, 9567875001, 9961815260</p>
+      </div>
+      <div class="with">with</div>
+      <div class="person">
+        <div class="role-s">The Bride</div>
+        <div class="pname">Dr. Kesiah Lee Abey</div>
+        <p class="pline">Daughter of<br><strong>Mrs. Suni Varghese &amp; Mr. Abey Jacob</strong><br>Cherupuzhethu House,<br>Pullad P.O, Thiruvalla, Pathanamthitta</p>
+      </div>
+      <p class="note-line">Your prayers and gracious presence on this beautiful day will make our wedding celebration truly complete.</p>
+    </section>
+    </div>
+
+    <!-- CALENDAR -->
+    <section class="save bgs bg-wash-l reveal">
+      <h2 class="big-title">SAVE <small>the</small> DATE</h2>
+      <div class="cal" data-day="11">
+        <div class="cal-title">JANUARY 2027</div>
+        <div class="cal-grid" data-cal role="grid" aria-label="January 2027, wedding on Monday 11 January"></div>
+      </div>
+      <div class="cd" data-countdown>
+        <div class="cd-row"><div><b data-d>00</b><span>DAYS</span></div><div><b data-h>00</b><span>HOURS</span></div><div><b data-m>00</b><span>MINUTES</span></div><div><b data-s>00</b><span>SECONDS</span></div></div>
+      </div>
+    </section>
+
+    <!-- 7. EVENTS -->
+    <section class="invite events bgs bg-wash-r reveal">
+      <div class="ev-eyebrow">Celebrations</div>
+      <h2 class="ev-title">Events</h2>
+      <div class="ev-card">
+        <div class="ev-tag">Holy Matrimony</div>
+        <h3>Wedding Ceremony</h3>
+        <p class="at">11th January 2027 &mdash; Monday</p>
+        <p class="ev-time">10:30 AM</p>
+        <p class="at">St. Thomas Orthodox Cathedral, Kannamkode-Adoor.</p>
+        <p class="ev-small">Which will by the grace of God be solemnized by</p>
+        <p class="bishop"><strong>H.G. Dr. Zacharias Mar Aprem</strong><br>Metropolitan of Diocese of Adoor, Kadampanadu.</p>
+      </div>
+      <div class="ev-card">
+        <div class="ev-tag">Join Us After</div>
+        <h3>Reception</h3>
+        <p class="at">11th January 2027 &mdash; Monday</p>
+        <p class="ev-time">Immediately following Ceremony</p>
+        <p class="at">St. Thomas Parish Hall</p>
+      </div>
+    </section>
+
+    <!-- 4. COUPLE PHOTO -->
+    <section class="couple reveal" id="couple">
+      <figure class="portrait"><img src="img/couple-bw.jpg" alt="Akhil and Kesiah, black and white portrait" width="760" height="884" loading="lazy"></figure>
+    </section>
+
+    <!-- 8. VENUES -->
+    <section class="invite venues frame reveal">
+      <div class="ev-eyebrow">Where To Find Us</div>
+      <h2 class="ev-title">Venues</h2>
+      <div class="ev-card">
+        <div class="ev-tag">Wedding Venue</div>
+        <p class="at">St. Thomas Orthodox Cathedral, Kannamkode-Adoor.</p>
+        <div class="vmap"><img class="illmap" src="img/map-wedding.jpg" alt="Illustrated map of the wedding venue, St. Thomas Orthodox Cathedral, Kannamkode-Adoor" loading="lazy"></div>
+        <img class="qr" src="qr-wedding.png" alt="QR code for the wedding venue location" width="150" height="150" loading="lazy">
+        <div class="ev-small">Scan for Location</div>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=9.1537125,76.7379844" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Open in Google Maps</a>
+      </div>
+      <div class="ev-card">
+        <div class="ev-tag">Reception Venue</div>
+        <p class="at">St. Thomas Parish Hall</p>
+        <div class="vmap"><img class="illmap" src="img/map-reception.jpg" alt="Illustrated map of the reception venue, St. Thomas Parish Hall, Kannamkode-Adoor" loading="lazy"></div>
+        <img class="qr" src="qr-reception.png" alt="QR code for the reception venue location" width="150" height="150" loading="lazy">
+        <div class="ev-small">Scan for Location</div>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Thatta+Road%2C+Adoor-Anandapally-Thumpamon+Rd%2C+Adoor%2C+Keralam+691523" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Open in Google Maps</a>
+      </div>
+    </section>
+
+    <!-- 9. BEST COMPLIMENTS -->
+    <section class="thanks bgs bg-wash-rf reveal">
+      <h2 class="thanks-title">Thank You!</h2>
+      <p class="msg">With Love &amp; Prayers,<br>we look forward to celebrating with you.</p>
+      <div class="happy">
+        <span class="comp">Best Compliments from</span>
+        <p>Arun George Varghese, Dr. Larin Ann Raju,<br>Jayden Arun Varghese &amp; Juvita Sera Arun</p>
+      </div>
+      <div class="foot">#AkhilKesiah2027</div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
