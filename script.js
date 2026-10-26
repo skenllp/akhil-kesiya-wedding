@@ -69,6 +69,7 @@
   function finish() {
     if (finished) return;
     finished = true;
+    try { video.pause(); } catch (e) {}       // freeze on the last frame: no restart or poster flash during the fade
     root.classList.remove('locked');
     ctl.hidden = false;
     window.scrollTo(0, 0);
@@ -78,20 +79,25 @@
   function openInvite() {
     if (opened) return;
     opened = true;
+    video.muted = true;                       // the ribbon clip has its own sound track; the song plays instead
+    try { audio.currentTime = 0; } catch (e) {}   // song begins exactly with the video, even if autoplay had started it early
     play();                                   // the tap is a user gesture: music starts with the ribbon
     hint.classList.add('hide');
+    video.loop = false;
+    video.addEventListener('playing', function () { video.removeAttribute('poster'); }, { once: true });
     var p = video.play();
     if (p && p.catch) p.catch(finish);
     // speed up the last part (flap opening / card reveal)
     var fast = false;
     var watch = setInterval(function () {
       if (!fast && video.currentTime >= 1.8) { fast = true; video.playbackRate = 2; }
-      if (video.currentTime >= 4.5 || finished) { clearInterval(watch); finish(); }
+      if (video.currentTime >= 4.3 || finished) { clearInterval(watch); finish(); }
     }, 40);
-    video.addEventListener('ended', finish);
-    video.addEventListener('error', finish);
+    video.addEventListener('ended', finish, { once: true });
+    video.addEventListener('error', finish, { once: true });
     setTimeout(finish, 7000);                 // safety net
   }
+  cover.addEventListener('pointerup', openInvite);   // fires as soon as the finger lifts, so the song starts with no extra delay
   cover.addEventListener('click', openInvite);
   cover.addEventListener('keydown', function (e) {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openInvite(); }
